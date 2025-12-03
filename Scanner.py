@@ -84,58 +84,7 @@ def rangeScan():
 
                                 # Check that last port is a valid port
                                 elif lastPort >= 1 and lastPort <65535:
-
-                                    while True:
-                                        # Ask the user what level of threading they want to use
-                                        print(
-                                            "Enter the number for the level of threading you want to use:\n"
-                                            "1. Fast (200 threads)"
-                                            "2. Safe (50 threads)"
-                                            "3. Stealth (10 threads)"
-                                            "4. Individual (single thread)"
-                                        )
-
-                                        try:
-                                            threadsLevel = int(input("= "))
-
-                                            # Check the users input is valid and run the scan
-                                            if threadsLevel == 1:
-                                                print(
-                                                    ""
-                                                )
-                                                break
-                                            elif threadsLevel == 2:
-                                                print(
-                                                    ""
-                                                )
-                                                break
-                                            elif threadsLevel == 3:
-                                                print(
-                                                    ""
-                                                )
-                                                break
-                                            elif threadsLevel == 4:
-                                                print(
-                                                    ""
-                                                )
-                                                break
-                                            else:
-                                                print(
-                                                    "Invalid option"
-                                                )
-                                        except ValueError:
-                                            print(
-                                                "Invalid option"
-                                            )
-
-
-
-
-
-
-
-
-                                    
+                                     
                                     # Get time of results
                                     date = datetime.datetime.now()
 
