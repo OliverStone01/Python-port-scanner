@@ -1,7 +1,9 @@
 # Port scanner
 
 > 🛠️ notice:
-> Scanner V2 is still under production and currently only range scan is available. Scanner V2 will include threading which allows you to preform quicker port scans.
+> Scanner V3 is still under production and will include time stamps and the ability to save log files of scans for later use.
+
+#### Current version: V2
 
 This is a simple TCP port scanner I designed for ethical penetration testing and cybersecurity studying. This tool can preform specific port scans or it can scan a range of ports.
 
@@ -13,7 +15,7 @@ This is a simple TCP port scanner I designed for ethical penetration testing and
 - Scan a specific port
 - Validates IP address and port numbers
 - Display time stamps for scans
-- Ho external dependencies
+- Using threading to improve range scan speeds
 
 ### Requirements:
 This project only uses pythons standard library.
@@ -31,6 +33,7 @@ You will then be prompted to choose a type of scan:
 Then you will be propted to enter a:
 - Valid IP address
 - One or more port numbers depending on what type of scan you choose.
+- The level of threading
 
 ### Example output:
 ```
@@ -51,9 +54,14 @@ Enter first port number:
 Enter last port number:
 = 25
 
-Date: 2025-01-01 12:34:56.789123
-IP: 192.168.1.10
-Port Range: 20 - 25
+Enter the amount of threads you wish to use.
+For example:
+Max speed (200 threads)
+Safe (50 threads)
+Stealth (10 threads)
+Individual (single thread)
+
+= 10
 
 Port 20 is closed.
 Port 21 is open.
