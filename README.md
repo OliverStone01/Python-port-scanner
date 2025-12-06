@@ -1,7 +1,7 @@
 # Port scanner
 
 > 🛠️ notice:
-> Scanner V3 is still under production and will include time stamps and the ability to save log files of scans for later use.
+> Scanner V3 is still under production and now include time stamps and the ability to save log files of scans for later use.
 
 #### Current version: V2
 
