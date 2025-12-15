@@ -132,8 +132,6 @@ def main():
 
 
 
-
-
 # Defining range scan function1
 
 def rangeScan(address, firstPort, lastPort, threads):
@@ -161,7 +159,7 @@ def rangeScan(address, firstPort, lastPort, threads):
 
     if input("Do you want to save results to a .txt file? (y/n):").lower() == 'y':
         logRangeScan(address, firstPort, lastPort, threads, openPorts, closedPorts, totalTime)
-        
+
 
 
 # Defining specific scan function
