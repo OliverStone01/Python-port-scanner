@@ -80,17 +80,17 @@ def main():
         help()
 
     elif argv[1] == "RangeScan":
-        try:
-            ipaddress.ip_address(argv[2])
-        except ValueError:
+
+        if len(argv) != 5:
             print(
-                "\n"
-                "Invalid IP\n"
+                "Missing information. Use -help to find out more about formatting"
             )
             quit()
-
-        address = argv[2]
-        firstPort = input("")
+        
+        else:
+            address = validateIP(argv[2])
+            firstPort = 
+                
 
 
     elif argv[1] == "SpecificScan":   
@@ -203,6 +203,7 @@ def scanSinglePort(address, port):
     sock.close()
     return (port, result == 0)
 
+
 # Get IP while validating input including checking if the IP address is valid or not
 def getIP():
     while True:
@@ -314,6 +315,19 @@ def help():
                 "python3 ScannerV4 -SpecificScan -IPaddress -Port -Save\n"
                 "python3 ScannerV4 -SpecificScan -111.111.111.111 -200 -Save\n\n"
             )
+    
+
+def validateIP(address):
+    try:
+        ipaddress.ip_address(address)
+        return address
+    except ValueError:
+        print(
+            "\n"
+            "Invalid IP\n"
+        )
+        quit()
+    
 
 
 main()
