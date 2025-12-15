@@ -89,7 +89,14 @@ def main():
         
         else:
             address = validateIP(argv[2])
-            firstPort = 
+            firstPort = validatePort(argv[3])
+            lastPort = validatePort(argv[4])
+            if firstPort > lastPort or firstPort == lastPort:
+                print(
+                    "The first port must be smaller than the last port"
+                )
+                quit()
+            else:
                 
 
 
@@ -328,6 +335,22 @@ def validateIP(address):
         )
         quit()
     
+
+def validatePort(input):
+    try:
+        port = int(input)
+        if port >= 0 and port <= 65535:
+            return port
+        else:
+            print(
+                "\nInvalid port"
+            )
+            quit()
+    except ValueError:
+        print(
+            "\nInvalid Port\n"
+        )
+        quit()
 
 
 main()
