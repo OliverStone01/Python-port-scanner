@@ -97,7 +97,7 @@ def main():
                 )
                 quit()
             else:
-                
+
 
 
     elif argv[1] == "SpecificScan":   
@@ -313,14 +313,14 @@ def help():
                 "To run the port scanner with propts, run 'python3 ScannerV4.py'\n"
                 "Otherwise you can use commnd line arguments:\n\n"
                 "For Range scan:\n"
-                "python3 ScannerV4 -RangeScan -IPaddress -FirstPort -LastPort\n"
-                "python3 ScannerV4 -RangeScan -111.111.111.111 -100 -200\n\n"
+                "python3 ScannerV4 RangeScan IPaddress FirstPort LastPort Threads\n"
+                "python3 ScannerV4 RangeScan 111.111.111.111 100 200 10\n\n"
                 "For Specific port scan:\n"
-                "python3 ScannerV4 -SpecificScan -IPaddress -Port\n"
-                "python3 ScannerV4 -SpecificScan -111.111.111.111 -200\n\n"
-                "If you wish to save your scan, you can add -Save to end of your input like such:\n"
-                "python3 ScannerV4 -SpecificScan -IPaddress -Port -Save\n"
-                "python3 ScannerV4 -SpecificScan -111.111.111.111 -200 -Save\n\n"
+                "python3 ScannerV4 SpecificScan IPaddress Port\n"
+                "python3 ScannerV4 SpecificScan 111.111.111.111 200\n\n"
+                "If you wish to save your scan, you can add Save to end of your input like such:\n"
+                "python3 ScannerV4 SpecificScan IPaddress Port Save\n"
+                "python3 ScannerV4 SpecificScan 111.111.111.111 200 Save\n\n"
             )
     
 
