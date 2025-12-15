@@ -66,8 +66,22 @@ def main():
                 break
 
             elif scanType == "2":
+
+                # Validate IP address
+                print(
+                    "\nEnter the IP address:"
+                )
+                address = getIP()
+
+                # Get the port number
+                print(
+                    "\n"
+                    "Enter the port number:"
+                )
+                port = getPort()
+
                 # Run specific scan function
-                specificScan()
+                specificScan(address, port)
                 break
 
             # if the user entered an invalid option
@@ -102,31 +116,18 @@ def main():
             
 
 
-
-
-    elif argv[1] == "SpecificScan":   
-        try:
-            ipaddress.ip_address(argv[2])
-        except ValueError:
+    elif argv[1] == "SpecificScan":
+        if len(argv) != 4:
             print(
-                "\n"
-                "Invalid IP\n"
+                "\nMissing information. Use -help to find out more about formatting\n"
             )
             quit()
-
-        address = argv[2]
-
-    else:
-        print("Invalid Input")
-        quit()
         
+        else:
+            address = validateIP(argv[2])
+            port = validatePort(argv[3])
+            specificScan(address, port)
         
-        
-
-        
-
-
-
 
 
 
@@ -160,25 +161,11 @@ def rangeScan(address, firstPort, lastPort, threads):
 
     if input("Do you want to save results to a .txt file? (y/n):").lower() == 'y':
         logRangeScan(address, firstPort, lastPort, threads, openPorts, closedPorts, totalTime)
-
-
+        
 
 
 # Defining specific scan function
-def specificScan():
-
-    # Get IP address while validating input including checking if the IP address is valid or not
-    print(
-        "\nEnter the IP address:"
-    )
-    address = getIP()
-
-    # Get port number
-    print(
-        "\n"
-        "Enter port number:"
-    )
-    port = getPort()
+def specificScan(address, port):
     
     startTime = time.time()
 
