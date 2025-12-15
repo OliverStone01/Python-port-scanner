@@ -79,21 +79,40 @@ def main():
     elif argv[1] == "-help":
         help()
 
-    else:
-        if ipaddress.ip_address(argv[1]) == True:
-            address == argv[1]
-            
-            try:
-                ipaddress.ip_address(address)
-                return address
-            except ValueError:
-                print(
-                    "\n"
-                    "Invalid IP"
-                )
-                quit
+    elif argv[1] == "RangeScan":
+        try:
+            ipaddress.ip_address(argv[2])
+        except ValueError:
+            print(
+                "\n"
+                "Invalid IP\n"
+            )
+            quit()
 
-        else:
+        address = argv[2]
+        firstPort = input("")
+
+
+    elif argv[1] == "SpecificScan":   
+        try:
+            ipaddress.ip_address(argv[2])
+        except ValueError:
+            print(
+                "\n"
+                "Invalid IP\n"
+            )
+            quit()
+
+        address = argv[2]
+
+    else:
+        print("Invalid Input")
+        quit()
+        
+        
+        
+
+        
 
 
 
