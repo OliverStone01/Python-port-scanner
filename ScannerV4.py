@@ -81,9 +81,9 @@ def main():
 
     elif argv[1] == "RangeScan":
 
-        if len(argv) != 5:
+        if len(argv) != 6:
             print(
-                "Missing information. Use -help to find out more about formatting"
+                "\nMissing information. Use -help to find out more about formatting\n"
             )
             quit()
         
@@ -91,12 +91,14 @@ def main():
             address = validateIP(argv[2])
             firstPort = validatePort(argv[3])
             lastPort = validatePort(argv[4])
+            threads = validateThreads(argv[5])
             if firstPort > lastPort or firstPort == lastPort:
                 print(
                     "The first port must be smaller than the last port"
                 )
                 quit()
-            else:
+            
+
 
 
 
@@ -349,6 +351,25 @@ def validatePort(input):
     except ValueError:
         print(
             "\nInvalid Port\n"
+        )
+        quit()
+
+
+def validateThreads(input):
+    try:
+        threads = int(input)
+
+        if threads >= 1 and threads <= 200:
+            return threads
+        else:
+            print(
+                "\nInvalid amount of threads\n"
+            )
+            quit()
+
+    except ValueError:
+        print(
+            "\nInvalid amount of threads\n"
         )
         quit()
 
