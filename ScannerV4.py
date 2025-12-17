@@ -86,23 +86,25 @@ def main():
                 )
                 port = getPort()
 
-                # Run specific scan function
+                # Run specific scan function.
                 specificScan(address, port)
                 break
 
-            # if the user enters an invalid option
+            # if the user enters an invalid option.
             else:
                 print(
                     "\n"
                     "Invalid Option\n"
                 )
 
-                
+    # If the user enters help, print the help menu.
     elif argv[1] == "-help":
         help()
 
+    # If the user enters RangeScan:
     elif argv[1] == "RangeScan":
 
+        # Check the user has entered all of the needed data.
         if len(argv) != 6:
             print(
                 "\nMissing information. Use -help to find out more about formatting\n"
