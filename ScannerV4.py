@@ -1,7 +1,7 @@
 # This is a pentesting tool designed for ethical use only.
 # - This tool must only be used where premision has been given for security testing.
 
-# Importing modules
+# Import modules.
 from concurrent.futures import ThreadPoolExecutor
 from sys import argv
 import datetime
@@ -9,55 +9,58 @@ import ipaddress
 import socket
 import time
 
-# Defining main function
+# Defining main function.
 def main():
 
-    # If the user has not used command line arguments:
+    # Check if the user has entered any command line arguements or not.
     if len(argv) == 1:
 
-        # Title
+        # print title
         print(
             " - - - - - - - - - - - - - - - - \n"
             "Port Scanner\n"
         )
 
-        # Ask the user to choose a scan option while doing input validation
+        # Ask the user to choose a scan option while doing input validation.
         while True:
             print(
-                "Enter the number for the type of scan:\n"
+                "Enter the number for the type of scan you want:\n"
                 "1. Range Scan\n"
                 "2. Specific Scan"
             )
             scanType = input("= ")
 
-            # Check if the user choose to run a rangeScan with option 1:
+            # Check which option the user choose.
             if scanType == "1":
 
-                # Validate IP address
+                # Get the IP address the user wants to scan.
                 print(
                     "\nEnter the IP address:"
                 )
                 address = getIP()
 
-                # Get the first port number
+                # Get the first port number.
                 print(
                     "\n"
                     "Enter the first port number:"
                 )
                 firstPort = getPort()
 
-                # Get the last port while making sure its larger than the first port
+                # Get the last port number.
                 print(
                     "\n"
                     "Enter the last port:"
                 )
+
+                # Check if the last port is larger than the first number. If its not, ask the user again.
                 while True:
                     lastPort = getPort()
+
                     if lastPort > firstPort:
                      break
                     
                     else:
-                        print("Last port must be larger than the first port")
+                        print("The last port must be larger than the first port")
                         lastPort = getPort()
 
                 # Get the amount of threads
