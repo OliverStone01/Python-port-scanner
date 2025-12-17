@@ -104,35 +104,42 @@ def main():
     # If the user enters RangeScan:
     elif argv[1] == "RangeScan":
 
-        # Check the user has entered all of the needed data.
+        # Check the user has entered all of the needed data. If not, print errer message.
         if len(argv) != 6:
             print(
                 "\nMissing information. Use -help to find out more about formatting\n"
             )
             quit()
         
+        # Get the needed data from the command line input.
         else:
             address = validateIP(argv[2])
             firstPort = validatePort(argv[3])
             lastPort = validatePort(argv[4])
             threads = validateThreads(argv[5])
+
+            # Make sure that the first port is smaller than the last port. 
             if firstPort > lastPort or firstPort == lastPort:
                 print(
                     "The first port must be smaller than the last port"
                 )
                 quit()
             else:
+                # Run the RangeScan function.
                 rangeScan(address, firstPort, lastPort, threads)
             
 
-
+    # If the user chooses to run a Specific scan.
     elif argv[1] == "SpecificScan":
+
+        # Check the user has entered all of the needed data. If not, print errer message.
         if len(argv) != 4:
             print(
                 "\nMissing information. Use -help to find out more about formatting\n"
             )
             quit()
         
+        # Get the needed data from the command line input.
         else:
             address = validateIP(argv[2])
             port = validatePort(argv[3])
