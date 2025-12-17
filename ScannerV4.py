@@ -282,7 +282,7 @@ def getThreads():
             )
 
 
-# Defining the saving function.
+# Defining the saving file function for a range scan.
 def logRangeScan(address, firstPort, lastPort, threads, openPorts, closedPorts, scanTime):
     
     # Set the file name to the current date and time.
@@ -307,11 +307,15 @@ def logRangeScan(address, firstPort, lastPort, threads, openPorts, closedPorts, 
         else:
             file.write("No open ports found\n\n")
         file.write("=" * 50 + "\n")
-        
 
+
+# Defining the saving file function for a specific port scan.
 def logSpecificScan(address, port, result, scanTime):
+
+    # Set the file name to the current date and time.
     filename = datetime.datetime.now().strftime("portScan_%Y-%m-%d_%H-%M-%S.txt")
 
+    # Write the data to the file.
     with open(filename, 'w') as file:
         file.write("=" * 50 + "\n")
         file.write("PORT SCANNER LOG\n")
@@ -327,6 +331,7 @@ def logSpecificScan(address, port, result, scanTime):
         file.write("=" * 50 + "\n\n")
 
 
+# Defining the help function for command line arguments.
 def help():
     print(
                 "\nPort scanner\n\n"
