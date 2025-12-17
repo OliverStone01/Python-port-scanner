@@ -63,22 +63,23 @@ def main():
                         print("The last port must be larger than the first port")
                         lastPort = getPort()
 
-                # Get the amount of threads
+                # Ask the user for the ammount of threads they want to use.
                 threads = getThreads()
 
                 # Run range scan funtion
                 rangeScan(address, firstPort, lastPort, threads)
                 break
 
+            # If the user chooses to run a specific port scan:
             elif scanType == "2":
 
-                # Validate IP address
+                # Get the IP address the user wants to scan.
                 print(
                     "\nEnter the IP address:"
                 )
                 address = getIP()
 
-                # Get the port number
+                # Get the port number.
                 print(
                     "\n"
                     "Enter the port number:"
@@ -89,12 +90,14 @@ def main():
                 specificScan(address, port)
                 break
 
-            # if the user entered an invalid option
+            # if the user enters an invalid option
             else:
                 print(
                     "\n"
                     "Invalid Option\n"
                 )
+
+                
     elif argv[1] == "-help":
         help()
 
