@@ -333,6 +333,8 @@ def logSpecificScan(address, port, result, scanTime):
 
 # Defining the help function for command line arguments.
 def help():
+
+    # Print all options and examples for using commmand line arguments.
     print(
                 "\nPort scanner\n\n"
                 "To run the port scanner with propts, run 'python3 ScannerV4.py'\n"
