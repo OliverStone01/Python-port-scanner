@@ -149,15 +149,17 @@ def main():
 
 
 
-# Defining range scan function1
-
+# Defining range scan function
 def rangeScan(address, firstPort, lastPort, threads):
 
+    # Set start time to measure how long the scan takes.
     startTime = time.time()
 
+    # an array to store the open and closed ports.
     openPorts = []
     closedPorts = []
 
+    # Scan each port using threading.
     with ThreadPoolExecutor(max_workers=threads) as executor:
         futures = [executor.submit(scanSinglePort, address, port)
                    for port in range(firstPort, (lastPort + 1))]
@@ -171,12 +173,13 @@ def rangeScan(address, firstPort, lastPort, threads):
                 closedPorts.append(port)
                 print(f"Port {port} is closed")
 
+    # Get current time and calculate how long the scan took.
     totalTime = round(((time.time()) - startTime), 4)
     print(f"{totalTime} secs")
 
+    # Ask the user if they want to save the scan.
     if input("Do you want to save results to a .txt file? (y/n):").lower() == 'y':
         logRangeScan(address, firstPort, lastPort, threads, openPorts, closedPorts, totalTime)
-
 
 
 # Defining specific scan function
