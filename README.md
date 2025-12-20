@@ -1,9 +1,6 @@
 # Port scanner
 
-> 🛠️ Version 4 is currently under construction:
-> Version 4 will include Command line interface for users.
-
-#### Current version: V3
+#### Current version: V4
 
 This is a simple TCP port scanner I designed for ethical penetration testing and cybersecurity studying. This tool can preform specific port scans or it can scan a range of ports.
 
@@ -15,6 +12,7 @@ This is a simple TCP port scanner I designed for ethical penetration testing and
 - Scan a specific port
 - Validates IP address and port numbers
 - Display time stamps for scans
+- Command line arguments or guided process
 - Using threading to improve range scan speeds
 - Able to save scans as a text file
 
@@ -23,10 +21,21 @@ This project only uses pythons standard library.
 - python 3.8+
 
 ### Usage:
-To run this script, make sure you are in the same directory and run:
+To run this script, You can either use command line arguements like this:
 ```
-Python3 scanner.py
+Python3 ScannerV4.py RangeScan (IP address) (first port) (last port) (Amount of threads you wish to use)
 ```
+
+You can also use the help menu to find out more about command line arguements like this:
+```
+Python3 ScannerV4.py -help
+```
+
+Or you can run the port scanner in assisted mode by being in the same director as the file and running:
+```
+Python3 ScannerV4.py
+```
+
 You will then be prompted to choose a type of scan:
 1. Range Scan
 2. Specific port scan
