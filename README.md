@@ -2,7 +2,7 @@
 
 #### Current version: V4
 
-This is a simple TCP port scanner I designed for ethical penetration testing and cybersecurity studying. This tool can preform specific port scans or it can scan a range of ports.
+This is a TCP port scanner I designed for ethical penetration testing and cybersecurity studying. This tool can preform specific port scans or it can scan a range of ports.
 
 > ⚠️ This tool was build for ethical use only!  
 > This tool must only be used to scan networks you have written premision to test.
